@@ -96,6 +96,13 @@ explore: rpt_report_execution_cache {
     relationship: one_to_many
   }
 
+  join: rpt_universe_item_target_cache {
+    type: inner
+    sql_on: ${rpt_universe_item_cache.id} = ${rpt_universe_item_target_cache.universe_item_cache_id} AND
+            ${rpt_universe_target_cache.id} = ${rpt_universe_item_target_cache.universe_target_cache_id} ;;
+    relationship: one_to_many
+  }
+
   join: rpt_client_programs_cache {
     type:  inner
     sql_on: ${rpt_report_execution_cache.id} = ${rpt_client_programs_cache.report_execution_id} AND

@@ -18,8 +18,4 @@ view: rpt_reports_cache {
     sql: ${TABLE}.uname ;;
   }
 
-#  measure: count {
-#    type: count
-#    drill_fields: [id, uname]
-#  }
 }

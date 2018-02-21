@@ -16,9 +16,4 @@ view: rpt_dim_custom_dic {
     type: number
     sql: ${TABLE}.report_id ;;
   }
-
-  measure: count {
-    type: count
-    drill_fields: [id, name]
-  }
 }

@@ -12,8 +12,4 @@ view: users {
     sql: ${TABLE}.name ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [id, name]
-  }
 }

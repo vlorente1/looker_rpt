@@ -33,8 +33,4 @@ view: rpt_report_execution_cache {
     sql: ${TABLE}.staff_id ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [id, reports.name, reports.id]
-  }
 }

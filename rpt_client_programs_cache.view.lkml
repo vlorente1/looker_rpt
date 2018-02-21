@@ -16,8 +16,4 @@ view: rpt_client_programs_cache {
     sql: ${TABLE}.report_execution_id ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: []
-  }
 }

@@ -32,8 +32,4 @@ view: rpt_universe_item_dic {
     sql: ${TABLE}.universe_dic_id ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [id, name]
-  }
 }

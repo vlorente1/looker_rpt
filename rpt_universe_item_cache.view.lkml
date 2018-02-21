@@ -27,8 +27,4 @@ view: rpt_universe_item_cache {
     sql: ${TABLE}.universe_item_dic_id ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [id]
-  }
 }

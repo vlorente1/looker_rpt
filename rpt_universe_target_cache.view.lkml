@@ -17,8 +17,4 @@ view: rpt_universe_target_cache {
     sql: ${TABLE}.universe_cache_id ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [id]
-  }
 }

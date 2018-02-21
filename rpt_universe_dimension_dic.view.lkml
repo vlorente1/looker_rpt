@@ -17,8 +17,4 @@ view: rpt_universe_dimension_dic {
     sql: ${TABLE}.universe_dic_id ;;
   }
 
-#  measure: count {
-#    type: count
-#    drill_fields: [id, name]
-#  }
 }

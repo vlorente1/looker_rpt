@@ -22,8 +22,4 @@ view: rpt_universe_dimension_target_cache {
     sql: ${TABLE}.universe_target_cache_id ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [id]
-  }
 }

@@ -22,8 +22,4 @@ view: rpt_universe_dic {
     sql: ${TABLE}.universe_id ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [id]
-  }
 }

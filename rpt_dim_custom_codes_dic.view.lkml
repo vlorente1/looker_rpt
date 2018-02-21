@@ -22,8 +22,4 @@ view: rpt_dim_custom_codes_dic {
     sql: ${TABLE}.ref_dim_custom_dic ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [id, name]
-  }
 }
