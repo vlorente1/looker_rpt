@@ -85,7 +85,8 @@ explore: rpt_report_execution_cache {
 
   join: rpt_universe_dimension_cache {
     type:  inner
-    sql_on:  ${rpt_universe_dimension_dic.id} = ${rpt_universe_dimension_cache.universe_dimension_dic_id} ;;
+    sql_on:  ${rpt_universe_dimension_dic.id} = ${rpt_universe_dimension_cache.universe_dimension_dic_id} AND
+             ${rpt_universe_cache.id} = ${rpt_universe_dimension_cache.universe_cache_id} ;;
     relationship: one_to_many
   }
 
@@ -98,13 +99,13 @@ explore: rpt_report_execution_cache {
   join: rpt_universe_dimension_target_cache {
     type: left_outer
     sql_on:  ${rpt_universe_dimension_cache.id} = ${rpt_universe_dimension_target_cache.universe_dimension_cache_id} AND
-             ${rpt_universe_target_cache.id} = ${rpt_universe_dimension_target_cache.universe_dimension_cache_id};;
+             ${rpt_universe_target_cache.id} = ${rpt_universe_dimension_target_cache.universe_target_cache_id};;
     relationship: one_to_many
   }
 
   join: rpt_dim_custom_codes_dic {
     type: left_outer
-    sql_on: ${rpt_universe_dimension_target_cache.universe_dimension_item_dic_id} = ${rpt_dim_custom_codes_dic.id} ;;
+    sql_on: ${rpt_dim_custom_codes_dic.id} = ${rpt_universe_dimension_target_cache.universe_dimension_item_dic_id} ;;
     relationship: one_to_many
   }
 
