@@ -63,7 +63,7 @@ view: clients {
   }
 
   measure: count {
-    type: count
-    drill_fields: [id]
+    type: count_distinct
+    sql:  ${id};;
   }
 }
