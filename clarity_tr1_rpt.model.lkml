@@ -71,15 +71,16 @@ explore: rpt_report_execution_cache {
     relationship: one_to_many
   }
 
-  join: rpt_universe_item_cache {
-    type:  inner
-    sql_on: ${rpt_universe_item_dic.id} = ${rpt_universe_item_cache.universe_item_dic_id} ;;
-    relationship: one_to_many
-  }
-
   join: rpt_universe_cache {
     type: inner
     sql_on: ${rpt_report_execution_cache.id} = ${rpt_universe_cache.report_execution_id} AND ${rpt_universe_cache.universe_dic_id} = ${rpt_universe_dic.id} ;;
+    relationship: one_to_many
+  }
+
+   join: rpt_universe_item_cache {
+    type:  inner
+    sql_on: ${rpt_universe_item_dic.id} = ${rpt_universe_item_cache.universe_item_dic_id} AND
+            ${rpt_universe_cache.id} = ${rpt_universe_item_cache.universe_cache_id};;
     relationship: one_to_many
   }
 
