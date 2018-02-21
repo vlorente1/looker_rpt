@@ -96,6 +96,20 @@ explore: rpt_report_execution_cache {
     relationship: one_to_many
   }
 
+  join: rpt_client_programs_cache {
+    type:  inner
+    sql_on: ${rpt_report_execution_cache.id} = ${rpt_client_programs_cache.report_execution_id} AND
+            ${rpt_universe_target_cache.target_id} = ${rpt_client_programs_cache.client_program_id} ;;
+    relationship: one_to_many
+  }
+
+  join: clients {
+    type:  inner
+    sql_on: ${rpt_client_programs_cache.client_id} = ${clients.id} ;;
+    relationship: one_to_many
+  }
+
+
   join: rpt_universe_dimension_target_cache {
     type: left_outer
     sql_on:  ${rpt_universe_dimension_cache.id} = ${rpt_universe_dimension_target_cache.universe_dimension_cache_id} AND
